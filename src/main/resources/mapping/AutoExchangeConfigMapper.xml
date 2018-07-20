@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangdsh.mapper.AutoExchangeConfigMapper" >
+    <resultMap id="BaseResultMap" type="com.yangdsh.entity.AutoExchangeConfig" >
+        <id column="ID" jdbcType="BIGINT" property="id" />
+        <result column="MEMBER_ID" jdbcType="VARCHAR" property="memberId" />
+        <result column="EXCH_CURRENCY" jdbcType="VARCHAR" property="exchCurrency" />
+        <result column="TARG_CURRENCY" jdbcType="VARCHAR" property="targCurrency" />
+        <result column="RESERVE_AMOUNT" jdbcType="DECIMAL" property="reserveAmount" />
+        <result column="EXTENSION" jdbcType="VARCHAR" property="extension" />
+        <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+        <result column="UPDATOR" jdbcType="VARCHAR" property="updator" />
+        <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        ID, MEMBER_ID, EXCH_CURRENCY, TARG_CURRENCY, RESERVE_AMOUNT, EXTENSION, CREATOR,
+    UPDATOR, MEMO
+    </sql>
+
+    <insert id="insert" parameterType="com.yangdsh.entity.AutoExchangeConfig" >
+      insert into tm_auto_exch_config (ID, MEMBER_ID, EXCH_CURRENCY,
+      TARG_CURRENCY, RESERVE_AMOUNT, EXTENSION,
+      CREATOR, UPDATOR,  MEMO)
+      values (#{id,jdbcType=BIGINT}, #{memberId,jdbcType=VARCHAR}, #{exchCurrency,jdbcType=VARCHAR},
+      #{targCurrency,jdbcType=VARCHAR}, #{reserveAmount,jdbcType=DECIMAL}, #{extension,jdbcType=VARCHAR},
+      #{creator,jdbcType=VARCHAR}, #{updator,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.yangdsh.entity.AutoExchangeConfig" >
+        insert into tm_auto_exch_config
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="memberId != null">
+                MEMBER_ID,
+            </if>
+            <if test="exchCurrency != null">
+                EXCH_CURRENCY,
+            </if>
+            <if test="targCurrency != null">
+                TARG_CURRENCY,
+            </if>
+            <if test="reserveAmount != null">
+                RESERVE_AMOUNT,
+            </if>
+            <if test="extension != null">
+                EXTENSION,
+            </if>
+            <if test="creator != null">
+                CREATOR,
+            </if>
+            <if test="updator != null">
+                UPDATOR,
+            </if>
+            <if test="memo != null">
+                MEMO,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="memberId != null">
+                #{memberId,jdbcType=VARCHAR},
+            </if>
+            <if test="exchCurrency != null">
+                #{exchCurrency,jdbcType=VARCHAR},
+            </if>
+            <if test="targCurrency != null">
+                #{targCurrency,jdbcType=VARCHAR},
+            </if>
+            <if test="reserveAmount != null">
+                #{reserveAmount,jdbcType=DECIMAL},
+            </if>
+            <if test="extension != null">
+                #{extension,jdbcType=VARCHAR},
+            </if>
+            <if test="creator != null">
+                #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="updator != null">
+                #{updator,jdbcType=VARCHAR},
+            </if>
+            <if test="memo != null">
+                #{memo,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from tm_auto_exch_config
+        where ID = #{id,jdbcType=BIGINT}
+    </select>
+
+
+</mapper>
