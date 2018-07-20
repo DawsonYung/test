@@ -15,6 +15,9 @@ public class AutoExchangeConfigController {
     @Autowired
     private AutoExchanConService autoExchanConService;
 
+
+
+
     @ResponseBody
     @RequestMapping(value = "/add", produces = {"application/json;charset=UTF-8"})
     public int addAutoExchanCon(AutoExchangeConfig autoExchangeConfig){
