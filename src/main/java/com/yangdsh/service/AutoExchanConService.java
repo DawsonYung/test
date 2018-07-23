@@ -8,4 +8,8 @@ public interface AutoExchanConService {
 
     AutoExchangeConfig selectAutoInfoByID(Long id);
 
+    int uptAutoExchanConfig(AutoExchangeConfig autoExchangeConfig);
+
+    int delAutoExchanConfig(Long id);
+
 }

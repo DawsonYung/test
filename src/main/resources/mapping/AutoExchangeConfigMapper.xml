@@ -94,5 +94,23 @@
         where ID = #{id,jdbcType=BIGINT}
     </select>
 
+    <update id="updateByPrimaryKey" parameterType="com.yangdsh.entity.AutoExchangeConfig">
+         update tm_auto_exch_config
+         set MEMBER_ID = #{memberId,jdbcType=VARCHAR},
+         EXCH_CURRENCY = #{exchCurrency,jdbcType=VARCHAR},
+         TARG_CURRENCY = #{targCurrency,jdbcType=VARCHAR},
+         RESERVE_AMOUNT = #{reserveAmount,jdbcType=DECIMAL},
+         EXTENSION = #{extension,jdbcType=VARCHAR},
+         CREATOR = #{creator,jdbcType=VARCHAR},
+         UPDATOR = #{updator,jdbcType=VARCHAR},
+         MEMO = #{memo,jdbcType=VARCHAR}
+         where ID = #{id,jdbcType=BIGINT}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from tm_auto_exch_config
+        where ID = #{id,jdbcType=BIGINT}
+    </delete>
 
 </mapper>

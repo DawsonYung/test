@@ -10,12 +10,13 @@ public interface AutoExchangeConfigMapper {
 
     AutoExchangeConfig selectByPrimaryKey(Long id);
 
+    int updateByPrimaryKey(AutoExchangeConfig args1);
+
+
+    int deleteByPrimaryKey(Long id);
+
 //    int insertSelective(AutoExchangeConfig args1);
-//
-//    int deleteByPrimaryKey(Long id);
-//
+
 //    int updateByPrimaryKeySelective(AutoExchangeConfig args1);
-//
-//    int updateByPrimaryKey(AutoExchangeConfig args1);
 
 }

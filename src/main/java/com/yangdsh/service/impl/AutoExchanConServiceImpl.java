@@ -22,4 +22,14 @@ public class AutoExchanConServiceImpl implements AutoExchanConService {
         return autoExchangeConfigMapper.selectByPrimaryKey(id);
     }
 
+    @Override
+    public int uptAutoExchanConfig(AutoExchangeConfig autoExchangeConfig) {
+        return autoExchangeConfigMapper.updateByPrimaryKey(autoExchangeConfig);
+    }
+
+    @Override
+    public int delAutoExchanConfig(Long id) {
+        return autoExchangeConfigMapper.deleteByPrimaryKey(id);
+    }
+
 }

@@ -1,1 +1,0 @@
-spring-boot项目静态文件目录：/src/java/resources/static
