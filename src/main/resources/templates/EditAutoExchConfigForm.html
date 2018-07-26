@@ -1,0 +1,40 @@
+<form th:action="@{/autoExchangeConfig/{action}(action=${action})}" method="post" class="form-horizontal"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <input type="hidden" name="id" th:value="${autoExchangeConfig.id}"/>
+
+    <div class="form-group">
+        <label for="autoExchangeConfig_memberId" class="col-sm-2 control-label">会员ID</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="autoExchangeConfig_memberId" name="memberId" th:value="${autoExchangeConfig.memberId}" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="autoExchangeConfig_exchCurrency" class="col-sm-2 control-label">换汇币种:</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="autoExchangeConfig_exchCurrency" name="exchCurrency" th:value="${autoExchangeConfig.exchCurrency}"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="autoExchangeConfig_targCurrency" class="col-sm-2 control-label">目标币种:</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="autoExchangeConfig_targCurrency" name="targCurrency" th:value="${autoExchangeConfig.targCurrency}"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="autoExchangeConfig_reserveAmount" class="col-sm-2 control-label">目标币种:</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="autoExchangeConfig_reserveAmount" name="reserveAmount" th:value="${autoExchangeConfig.reserveAmount}"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input class="btn btn-primary" type="submit" value="提交"/>
+            <input class="btn" type="button" value="返回" onclick="history.back()"/>
+        </div>
+    </div>
+</form>
