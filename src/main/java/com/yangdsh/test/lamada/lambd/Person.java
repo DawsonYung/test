@@ -1,0 +1,62 @@
+package com.yangdsh.test.lamada.lambd;
+
+import java.util.Objects;
+
+/**
+ * <p> </p>
+ *
+ * @Author yangdesheng
+ * @Date 2018/12/10 12:01
+ * @Version 1.0
+ */
+public class Person {
+    private String name;
+    private Integer age;
+    private Integer score;
+
+    public Person(String name, int age, int score) {
+        this.name = name;
+        this.age = age;
+        this.score = score;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age &&
+                score == person.score &&
+                Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, age, score);
+    }
+}
